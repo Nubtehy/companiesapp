@@ -9,11 +9,7 @@ var bodyParser = require('body-parser');
 
 // Application initialization
 
-var connection = mysql.createConnection({
-  host     : config.db.host,
-  user     : config.user,
-  password : config.password,
-});
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 connection.query('CREATE DATABASE IF NOT EXISTS '+config.db.name, function (err) {
   if (err) throw err;
@@ -123,3 +119,4 @@ app.get('/company/:id', function (req, res, next) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
+connection.end();
