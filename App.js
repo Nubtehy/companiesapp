@@ -33,9 +33,7 @@ app.use(bodyParser.json());
 // Allow requests from any origin
 app.use(cors({ origin: '*' }));
 
-app.get('/', function (req, res) {
-  res.sendFile('index.html')
-});
+
 // Main route sends our HTML file
 
 app.get('/companies', function(req, res) {
@@ -119,6 +117,10 @@ app.delete('/company/:id', function (req, res) {
 app.get('/company/:id', function (req, res, next) {
   res.send('company');
 });
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log('Example app listening on port: ' + port);
