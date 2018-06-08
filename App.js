@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(cors({ origin: '*' }));
 
 app.get('/', function (req, res) {
-  res.send('index.html')
+  res.sendFile('index.html')
 });
 // Main route sends our HTML file
 
