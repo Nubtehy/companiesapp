@@ -6,7 +6,7 @@ var app = express();
 var config = require('./dbconfig.json');
 // parse urlencoded request bodies into req.body
 var bodyParser = require('body-parser');
-
+var path = require('path');
 // Application initialization
 
 var connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -26,7 +26,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS '+config.db.name, function (err)
     });
   });
 });
-app.use(express.static('build'));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
