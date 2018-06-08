@@ -118,7 +118,7 @@ app.get('/company/:id', function (req, res, next) {
   res.send('company');
 });
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 var port = process.env.PORT || 3000;
