@@ -9,12 +9,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 // Application initialization
 
-var connection = mysql.createConnection({
-  host     : config.db.host,
-  user     : config.user,
-  password : config.password,
-});
-
+var connection = mysql.createConnection(process.env.JAWSDB_URL || config.db.url);
 connection.query('CREATE DATABASE IF NOT EXISTS '+config.db.name, function (err) {
   if (err) throw err;
   connection.query('USE '+config.db.name, function (err) {
