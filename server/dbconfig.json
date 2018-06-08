@@ -1,0 +1,10 @@
+{
+  "apiPrefix": "http://localhost:8080",
+  "serverPort": "3306",
+  "db": {
+    "name": "poqjubfg0a4kskou",
+    "host": "n7qmaptgs6baip9z.chr7pe7iynqr.eu-west-1.rds.amazonaws.com"
+  },
+  "password": "bkir20kv3ac0rr1q",
+  "user": "dog4wtomi2vl5w81"
+}

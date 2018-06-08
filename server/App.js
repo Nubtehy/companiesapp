@@ -3,21 +3,21 @@ var express = require('express'),
 var cors = require('cors');
 var objectAssign = require ('object-assign');
 var app = express();
-
+var config = require('./dbconfig.json');
 // parse urlencoded request bodies into req.body
 var bodyParser = require('body-parser');
 
 // Application initialization
 
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'nailya',
-  password : '123456789'
+  host     : config.db.host,
+  user     : config.user,
+  password : config.password,
 });
 
-connection.query('CREATE DATABASE IF NOT EXISTS test', function (err) {
+connection.query('CREATE DATABASE IF NOT EXISTS '+config.db.name, function (err) {
   if (err) throw err;
-  connection.query('USE test', function (err) {
+  connection.query('USE '+config.db.name, function (err) {
     if (err) throw err;
     connection.query('CREATE TABLE IF NOT EXISTS companies('
       + 'id INT NOT NULL AUTO_INCREMENT,'
