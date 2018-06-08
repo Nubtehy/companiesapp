@@ -26,6 +26,8 @@ connection.query('CREATE DATABASE IF NOT EXISTS '+config.db.name, function (err)
     });
   });
 });
+
+console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.urlencoded({extended: false}));
