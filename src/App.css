@@ -1,0 +1,93 @@
+body{
+  background: aliceblue;
+}
+
+*{
+  box-sizing: border-box;
+}
+.App {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.company .child{
+  padding-left: 15px;
+}
+.modal-wrapper{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  top: 0;
+  left: 0;
+}
+.modal-container{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin: 0 auto;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  z-index: 5;
+  overflow: hidden;
+}
+form{
+  background: #ffffff;
+  padding: 15px;
+}
+input[type=text]{
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
+select{
+  width: 100%;
+  padding: 5px;
+}
+.form-input{
+  margin-bottom: 20px;
+}
+.green{
+
+  background: rgba(42, 255, 56, 0.3);
+}
+.green:hover{
+  border: none;
+  background: rgba(42, 255, 56, 0.8);
+  padding: 15px 30px;
+}
+.orange{
+  background: rgba(255, 116, 0, 0.3);
+}
+.orange:hover{
+  background: rgba(255, 116, 0, 0.8);
+}
+.close{
+  float: right;
+  border: none;
+  padding: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.close:hover{
+  background: royalblue;
+  color: #ffffff;
+}
+.company{
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #ffffff;
+}
+.company button{
+  margin-left: 15px;
+}
+button{
+  border: none;
+  padding: 15px 30px;
+  transition: 0.2s ease-in all;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.addCompany{
+  margin-bottom: 20px;
+}
